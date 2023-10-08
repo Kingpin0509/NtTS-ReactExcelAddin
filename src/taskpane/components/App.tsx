@@ -113,3 +113,13 @@ export default class App extends React.Component<AppProps, AppState> {
     );
   }
 }
+/**
+ * Vorlage
+ * https://forms.office.com/Pages/ShareFormPage.aspx?id=xha_d6UfpkaQSaRBx64oPOHJw-VAVsJCnlaVMUqVOSFUOE1IVzVEMFE1Nk9UT0dPOUY5S0RPQjhEUiQlQCN0PWcu&sharetoken=o57VGgQtOi3HP6XdDLYH
+ * Für Zusammenarbeit
+ * https://forms.office.com/Pages/DesignPage.aspx?fragment=FormId%3Dxha_d6UfpkaQSaRBx64oPOHJw-VAVsJCnlaVMUqVOSFUOE1IVzVEMFE1Nk9UT0dPOUY5S0RPQjhEUiQlQCN0PWcu%26Token%3Da7b7263b02cb4322bca2e2903b516e05
+ * Antworten senden und sammeln
+ * https://forms.office.com/Pages/ResponsePage.aspx?id=xha_d6UfpkaQSaRBx64oPOHJw-VAVsJCnlaVMUqVOSFUOE1IVzVEMFE1Nk9UT0dPOUY5S0RPQjhEUiQlQCN0PWcu
+ * https://forms.office.com/e/VqLtWXKmY7
+ * <iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=xha_d6UfpkaQSaRBx64oPOHJw-VAVsJCnlaVMUqVOSFUOE1IVzVEMFE1Nk9UT0dPOUY5S0RPQjhEUiQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+ */
