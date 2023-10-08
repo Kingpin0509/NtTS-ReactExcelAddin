@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>c81654cf-ff1e-46af-ae3c-f127f3feb90f</Id>
-  <Version>1.0.0.2</Version>
+  <Version>1.0.5.0</Version>
     <ProviderName>Michael Humann</ProviderName>
   <DefaultLocale>de-De</DefaultLocale>
   <DisplayName DefaultValue="Excelerweiterung - Nietiet GmbH"/>
   <Description DefaultValue="Erweiterung zur Konsolidierung unternehmensweiter Arbeitsprozesse - Im sinne der Produktivitässteigerung und Förderung der Firmenidentität"/>
-
   <IconUrl DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://www.pflanzliche-rohstoffe.eu"/>
+  <SupportUrl DefaultValue="https://storagenietietoffice.z13.web.core.windows.net"/>
   <AppDomains>
     <AppDomain>https://storagenietietoffice.z13.web.core.windows.net</AppDomain>
   </AppDomains>
@@ -17,7 +16,7 @@
     <Host Name="Workbook"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/taskpane.html"/>
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
@@ -31,7 +30,7 @@
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
+              <CustomTab id="TabNietiet">
               <Group id="CommandsGroup">
                 <Label resid="CommandsGroup.Label"/>
                 <Icon>
@@ -56,7 +55,8 @@
                   </Action>
                 </Control>
               </Group>
-            </OfficeTab>
+              <Label resid="TabNietiet.Label" />
+            </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -74,11 +74,12 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Nietiet GmbH - Excelerweiterung!"/>
+        <bt:String id="TabNietiet.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Excelerweiterung"/>
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Excelerweiterung erfolgreich geladen. Öffne den 'Start' Tab, klick auf 'Excelerweiterung' und leg los."/>
+        <bt:String id="GetStarted.Description" DefaultValue="Excelerweiterung erfolgreich geladen. Öffne den 'Nietiet GmbH' Tab, klick auf 'Excelerweiterung' und leg los."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
       </bt:LongStrings>
     </Resources>

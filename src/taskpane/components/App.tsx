@@ -28,15 +28,15 @@ export default class App extends React.Component<AppProps, AppState> {
       listItems: [
         {
           icon: "Ribbon",
-          primaryText: "Achieve more with Office integration",
+          primaryText: "Steigerung der Betriebsqualität",
         },
         {
           icon: "Unlock",
-          primaryText: "Unlock features and functionality",
+          primaryText: "Freigeben von Unternehmensressourcen",
         },
         {
           icon: "Design",
-          primaryText: "Create and visualize like a pro",
+          primaryText: "Förderung einheitlicher Firmenkultur und -identität",
         },
       ],
     });
@@ -72,20 +72,41 @@ export default class App extends React.Component<AppProps, AppState> {
         <Progress
           title={title}
           logo={require("./../../../assets/logo-filled.png")}
-          message="Please sideload your addin to see app body."
+          message="Initialisierung Fehlgeschlagen - Body leer - sideload?"
         />
       );
     }
 
     return (
       <div className="ms-welcome">
-        <Header logo={require("./../../../assets/logo-filled.png")} title={this.props.title} message="Welcome" />
-        <HeroList message="Discover what Office Add-ins can do for you today!" items={this.state.listItems}>
+        <Header
+          logo={require("./../../../assets/logo-filled.png")}
+          title={this.props.title}
+          message="Herzlich Willkommen"
+        />
+        <HeroList
+          message="Excel-Erweiterung zur vereinfachung und standardisierung der Arbeitplannung"
+          items={this.state.listItems}
+        >
           <p className="ms-font-l">
-            Modify the source files, then click <b>Run</b>.
+            Klicke auf eine <b>Aufgabe</b> um zu starten.
           </p>
+          <h2>Aufträge</h2>
+          <h3>Dosenaufträge</h3>
           <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
-            Run
+            Dosenauftrag erfassen (AFK-_)
+          </DefaultButton>
+          <h3>Kapselaufträge</h3>
+          <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
+            Kapselauftrag erfassen (_-A)
+          </DefaultButton>
+          <h3>Liquidaufträge</h3>
+          <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
+            Liquidauftrag erfassen (ALF-_)
+          </DefaultButton>
+          <h3>Bulk- Doypackaufträge</h3>
+          <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
+            Bulk- Doypackauftrag erfassen (AF-_-_)
           </DefaultButton>
         </HeroList>
       </div>
