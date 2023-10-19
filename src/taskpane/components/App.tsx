@@ -49,13 +49,151 @@ export default class App extends React.Component<AppProps, AppState> {
          * Insert your Excel code here
          */
         const range = context.workbook.getSelectedRange();
-
         // Read the range address
         range.load("address");
-
         // Update the fill color
         range.format.fill.color = "yellow";
-
+        range.format.font.color = "red";
+        await context.sync();
+        console.log(`The range address was ${range.address}.`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  clickfertig = async () => {
+    try {
+      await Excel.run(async (context) => {
+        /**
+         * Insert your Excel code here
+         */
+        const data = [["fertig"]];
+        const range = context.workbook.getSelectedRange();
+        // Read the range address
+        range.load("address");
+        // Ausgwählten Addressbereich löschen
+        range.delete(Excel.DeleteShiftDirection.up);
+        range.values = data;
+        // Update the fill color
+        range.format.fill.color = "green";
+        // Update the Text color
+        range.format.font.color = "black";
+        // Update the Schrifttyp zu "Fett"
+        range.format.font.bold = true;
+        // Spaltenbreite automatisch anpassen
+        range.format.autofitColumns();
+        await context.sync();
+        console.log(`The range address was ${range.address}.`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  clickläuft = async () => {
+    try {
+      await Excel.run(async (context) => {
+        /**
+         * Insert your Excel code here
+         */
+        const data = [["läuft"]];
+        const range = context.workbook.getSelectedRange();
+        // Read the range address
+        range.load("address");
+        // Ausgwählten Addressbereich löschen
+        range.delete(Excel.DeleteShiftDirection.up);
+        range.values = data;
+        // Update the fill color
+        range.format.fill.color = "green";
+        // Update the Text color
+        range.format.font.color = "black";
+        // Update the Schrifttyp zu "Fett"
+        range.format.font.bold = true;
+        // Spaltenbreite automatisch anpassen
+        range.format.autofitColumns();
+        await context.sync();
+        console.log(`The range address was ${range.address}.`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  clickläuftbald = async () => {
+    try {
+      await Excel.run(async (context) => {
+        /**
+         * Insert your Excel code here
+         */
+        const data = [["Läuft bald"]];
+        const range = context.workbook.getSelectedRange();
+        // Read the range address
+        range.load("address");
+        // Ausgwählten Addressbereich löschen
+        range.delete(Excel.DeleteShiftDirection.up);
+        range.values = data;
+        // Update the fill color
+        range.format.fill.color = "green";
+        // Update the Text color
+        range.format.font.color = "black";
+        // Update the Schrifttyp zu "Fett"
+        range.format.font.bold = true;
+        // Spaltenbreite automatisch anpassen
+        range.format.autofitColumns();
+        await context.sync();
+        console.log(`The range address was ${range.address}.`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  clickpausiert = async () => {
+    try {
+      await Excel.run(async (context) => {
+        /**
+         * Insert your Excel code here
+         */
+        const data = [["Pausiert"]];
+        const range = context.workbook.getSelectedRange();
+        // Read the range address
+        range.load("address");
+        // Ausgwählten Addressbereich löschen
+        range.delete(Excel.DeleteShiftDirection.up);
+        range.values = data;
+        // Update the fill color
+        range.format.fill.color = "yellow";
+        // Update the Text color
+        range.format.font.color = "black";
+        // Update the Schrifttyp zu "Fett"
+        range.format.font.bold = true;
+        // Spaltenbreite automatisch anpassen
+        range.format.autofitColumns();
+        await context.sync();
+        console.log(`The range address was ${range.address}.`);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  clickfreigabewartend = async () => {
+    try {
+      await Excel.run(async (context) => {
+        /**
+         * Insert your Excel code here
+         */
+        const data = [["warten auf Freigabe"]];
+        const range = context.workbook.getSelectedRange();
+        // Read the range address
+        range.load("address");
+        // Ausgwählten Addressbereich löschen
+        range.delete(Excel.DeleteShiftDirection.up);
+        range.values = data;
+        // Update the fill color
+        range.format.fill.color = "yellow";
+        // Update the Text color
+        range.format.font.color = "black";
+        // Update the Schrifttyp zu "Fett"
+        range.format.font.bold = true;
+        // Spaltenbreite automatisch anpassen
+        range.format.autofitColumns();
         await context.sync();
         console.log(`The range address was ${range.address}.`);
       });
@@ -88,7 +226,49 @@ export default class App extends React.Component<AppProps, AppState> {
           message="Excel-Erweiterung zur vereinfachung und standardisierung der Arbeitplannung"
           items={this.state.listItems}
         >
+          One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung
           <p className="ms-font-l">
+            Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
+            <b>Formatierungsvorlage</b>.
+          </p>
+          <h2>Offene Kapselaufträge</h2>
+          <h3>Status</h3>
+          <DefaultButton
+            className="ms-welcome__action"
+            iconProps={{ iconName: "ChevronRight" }}
+            onClick={this.clickfertig}
+          >
+            Fertig
+          </DefaultButton>
+          <DefaultButton
+            className="ms-welcome__action"
+            iconProps={{ iconName: "ChevronRight" }}
+            onClick={this.clickläuft}
+          >
+            Läuft
+          </DefaultButton>
+          <DefaultButton
+            className="ms-welcome__action"
+            iconProps={{ iconName: "ChevronRight" }}
+            onClick={this.clickläuftbald}
+          >
+            Läuft bald
+          </DefaultButton>
+          <DefaultButton
+            className="ms-welcome__action"
+            iconProps={{ iconName: "ChevronRight" }}
+            onClick={this.clickpausiert}
+          >
+            Pausiert
+          </DefaultButton>
+          <DefaultButton
+            className="ms-welcome__action"
+            iconProps={{ iconName: "ChevronRight" }}
+            onClick={this.clickfreigabewartend}
+          >
+            warten auf Freigabe
+          </DefaultButton>
+          {/* <p className="ms-font-l">
             Klicke auf eine <b>Aufgabe</b> um zu starten.
           </p>
           <h2>Aufträge</h2>
@@ -107,7 +287,7 @@ export default class App extends React.Component<AppProps, AppState> {
           <h3>Bulk- Doypackaufträge</h3>
           <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
             Bulk- Doypackauftrag erfassen (AF-_-_)
-          </DefaultButton>
+          </DefaultButton> */}
         </HeroList>
       </div>
     );
