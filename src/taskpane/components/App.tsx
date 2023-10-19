@@ -223,7 +223,7 @@ export default class App extends React.Component<AppProps, AppState> {
           message="Herzlich Willkommen"
         />
         <HeroList
-          message="Excel-Erweiterung zur vereinfachung und standardisierung der Arbeitplannung"
+          message="One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung zur vereinfachung und standardisierung der Arbeitplannung"
           items={this.state.listItems}
         >
           One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung

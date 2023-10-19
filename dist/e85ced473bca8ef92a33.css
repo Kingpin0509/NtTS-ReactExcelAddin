@@ -27,6 +27,12 @@ ul {
   align-items: center;
 }
 
+.ms-welcome__headerh1 {
+  margin-top: -15px;
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
 .ms-welcome__main {
   display: -webkit-flex;
   display: flex;
