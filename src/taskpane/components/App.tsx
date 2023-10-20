@@ -71,8 +71,6 @@ export default class App extends React.Component<AppProps, AppState> {
         const range = context.workbook.getSelectedRange();
         // Read the range address
         range.load("address");
-        // Ausgwählten Addressbereich löschen
-        range.delete(Excel.DeleteShiftDirection.up);
         range.values = data;
         // Update the fill color
         range.format.fill.color = "green";
@@ -99,8 +97,6 @@ export default class App extends React.Component<AppProps, AppState> {
         const range = context.workbook.getSelectedRange();
         // Read the range address
         range.load("address");
-        // Ausgwählten Addressbereich löschen
-        range.delete(Excel.DeleteShiftDirection.up);
         range.values = data;
         // Update the fill color
         range.format.fill.color = "green";
@@ -127,8 +123,6 @@ export default class App extends React.Component<AppProps, AppState> {
         const range = context.workbook.getSelectedRange();
         // Read the range address
         range.load("address");
-        // Ausgwählten Addressbereich löschen
-        range.delete(Excel.DeleteShiftDirection.up);
         range.values = data;
         // Update the fill color
         range.format.fill.color = "green";
@@ -155,8 +149,6 @@ export default class App extends React.Component<AppProps, AppState> {
         const range = context.workbook.getSelectedRange();
         // Read the range address
         range.load("address");
-        // Ausgwählten Addressbereich löschen
-        range.delete(Excel.DeleteShiftDirection.up);
         range.values = data;
         // Update the fill color
         range.format.fill.color = "yellow";
@@ -183,8 +175,6 @@ export default class App extends React.Component<AppProps, AppState> {
         const range = context.workbook.getSelectedRange();
         // Read the range address
         range.load("address");
-        // Ausgwählten Addressbereich löschen
-        range.delete(Excel.DeleteShiftDirection.up);
         range.values = data;
         // Update the fill color
         range.format.fill.color = "yellow";
