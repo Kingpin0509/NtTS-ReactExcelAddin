@@ -38,6 +38,7 @@
                   <bt:Image size="32" resid="Icon.32x32"/>
                   <bt:Image size="80" resid="Icon.80x80"/>
                 </Icon>
+
                 <Control xsi:type="Button" id="TaskpaneButton">
                   <Label resid="TaskpaneButton.Label"/>
                   <Supertip>
@@ -54,6 +55,24 @@
                     <SourceLocation resid="Taskpane.Url"/>
                   </Action>
                 </Control>
+
+                <Control xsi:type="Button" id="TaskpaneButton1">
+                  <Label resid="TaskpaneButton1.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton1.Label"/>
+                    <Description resid="TaskpaneButton1.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId2</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+
               </Group>
               <Label resid="TabNietiet.Label" />
             </CustomTab>
@@ -71,16 +90,19 @@
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/taskpane.html"/>
+        <bt:Url id="Taskpane1.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Nietiet GmbH - Excelerweiterung!"/>
         <bt:String id="TabNietiet.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Excelerweiterung"/>
+        <bt:String id="TaskpaneButton1.Label" DefaultValue="Excelerweiterung 1"/>
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Excelerweiterung erfolgreich geladen. Öffne den 'Nietiet GmbH' Tab, klick auf 'Excelerweiterung' und leg los."/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
+        <bt:String id="TaskpaneButton1.Tooltip" DefaultValue="Klicken um Excelerweiterung 1 anzuzeigen"/>
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

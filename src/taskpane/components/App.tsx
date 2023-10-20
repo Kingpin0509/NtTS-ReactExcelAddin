@@ -226,8 +226,7 @@ export default class App extends React.Component<AppProps, AppState> {
           message="One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung zur vereinfachung und standardisierung der Arbeitplannung"
           items={this.state.listItems}
         >
-          One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung
-          <p className="ms-font-l">
+          <p className="ms-font-xs">
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
           </p>
