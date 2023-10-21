@@ -220,20 +220,12 @@ export default class App extends React.Component<AppProps, AppState> {
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
           </p>
+
           <h3>Status</h3>
-          <div className="ms-Grid">
-            <div className="ms-Grid-row">
-              <div className="ms-Grid-col ms-sm4 ms-smPush8">
-                <div className="LayoutPage-demoBlock">First in code</div>
-              </div>
-              <div className="ms-Grid-col ms-sm8 ms-smPull4">
-                <div className="LayoutPage-demoBlock">Second in code</div>
-              </div>
-            </div>
+          <div className="ms-Grid-row">
+            <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
+            <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
           </div>
-          <h3>Status</h3>
-          <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
-          <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
           <DefaultButton
             color="#66ff00"
             className="ms-welcome__action"
@@ -274,7 +266,18 @@ export default class App extends React.Component<AppProps, AppState> {
           >
             warten auf Freigabe
           </DefaultButton>
-          {/* <p className="ms-font-l">
+          {/* 
+          <div className="ms-Grid">
+            <div className="ms-Grid-row">
+              <div className="ms-Grid-col ms-sm4 ms-smPush8">
+                <div className="LayoutPage-demoBlock">First in code</div>
+              </div>
+              <div className="ms-Grid-col ms-sm8 ms-smPull4">
+                <div className="LayoutPage-demoBlock">Second in code</div>
+              </div>
+            </div>
+          </div>
+          <p className="ms-font-l">
             Klicke auf eine <b>Aufgabe</b> um zu starten.
           </p>
           <h2>Aufträge</h2>
