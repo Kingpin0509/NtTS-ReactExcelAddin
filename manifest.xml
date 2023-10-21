@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>c81654cf-ff1e-46af-ae3c-f127f3feb90f</Id>
-  <Version>2.1.1.0</Version>
+  <Version>2.1.2.0</Version>
     <ProviderName>Michael Humann</ProviderName>
   <DefaultLocale>de-De</DefaultLocale>
   <DisplayName DefaultValue="Excelerweiterung - Nietiet GmbH"/>
