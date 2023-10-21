@@ -73,7 +73,7 @@ export default class App extends React.Component<AppProps, AppState> {
         range.load("address");
         range.values = data;
         // Update the fill color
-        range.format.fill.color = "green";
+        range.format.fill.color = "#66ff00";
         // Update the Text color
         range.format.font.color = "black";
         // Update the Schrifttyp zu "Fett"
@@ -99,7 +99,7 @@ export default class App extends React.Component<AppProps, AppState> {
         range.load("address");
         range.values = data;
         // Update the fill color
-        range.format.fill.color = "green";
+        range.format.fill.color = "#66ff00";
         // Update the Text color
         range.format.font.color = "black";
         // Update the Schrifttyp zu "Fett"
@@ -125,7 +125,7 @@ export default class App extends React.Component<AppProps, AppState> {
         range.load("address");
         range.values = data;
         // Update the fill color
-        range.format.fill.color = "green";
+        range.format.fill.color = "#66ff00";
         // Update the Text color
         range.format.font.color = "black";
         // Update the Schrifttyp zu "Fett"
@@ -220,9 +220,22 @@ export default class App extends React.Component<AppProps, AppState> {
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
           </p>
-          <h2>Offene Kapselaufträge</h2>
           <h3>Status</h3>
+          <div className="ms-Grid">
+            <div className="ms-Grid-row">
+              <div className="ms-Grid-col ms-sm4 ms-smPush8">
+                <div className="LayoutPage-demoBlock">First in code</div>
+              </div>
+              <div className="ms-Grid-col ms-sm8 ms-smPull4">
+                <div className="LayoutPage-demoBlock">Second in code</div>
+              </div>
+            </div>
+          </div>
+          <h3>Status</h3>
+          <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
+          <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
           <DefaultButton
+            color="#66ff00"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickfertig}
@@ -230,6 +243,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Fertig
           </DefaultButton>
           <DefaultButton
+            color="#66ff00"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickläuft}
@@ -237,6 +251,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Läuft
           </DefaultButton>
           <DefaultButton
+            color="#66ff00"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickläuftbald}
@@ -244,6 +259,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Läuft bald
           </DefaultButton>
           <DefaultButton
+            color="#yellow"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickpausiert}
@@ -251,6 +267,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Pausiert
           </DefaultButton>
           <DefaultButton
+            color="#yellow"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickfreigabewartend}
