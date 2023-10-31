@@ -3,7 +3,8 @@ import { DefaultButton } from "@fluentui/react";
 import Header from "./Header";
 import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
-
+import { NavCustomLinkExample } from "./Navigation";
+import { Nav, INavStyles, INavLinkGroup } from "@fluentui/react/lib/Nav";
 /* global console, Excel, require  */
 
 export interface AppProps {
@@ -204,7 +205,7 @@ export default class App extends React.Component<AppProps, AppState> {
         />
       );
     }
-
+    <NavCustomLinkExample></NavCustomLinkExample>
     return (
       <div className="ms-welcome">
         <Header
@@ -251,7 +252,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Läuft bald
           </DefaultButton>
           <DefaultButton
-            color="#yellow"
+            color="yellow"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickpausiert}
@@ -259,7 +260,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Pausiert
           </DefaultButton>
           <DefaultButton
-            color="#yellow"
+            color="yellow"
             className="ms-welcome__action"
             iconProps={{ iconName: "ChevronRight" }}
             onClick={this.clickfreigabewartend}
