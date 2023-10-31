@@ -1,6 +1,6 @@
 {
   "name": "nietiet-gmbh-excel-addin",
-  "version": "2.1.2",
+  "version": "2.5.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/OfficeDev/Office-Addin-TaskPane-React.git"

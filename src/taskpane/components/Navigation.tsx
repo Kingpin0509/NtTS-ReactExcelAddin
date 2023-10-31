@@ -1,44 +1,44 @@
-import * as React from 'react';
-import { Nav, INavLink, INavStyles, INavLinkGroup } from '@fluentui/react/lib/Nav';
-import { DefaultButton } from '@fluentui/react/lib/Button';
+import * as React from "react";
+import { Nav, INavLink, INavStyles, INavLinkGroup } from "@fluentui/react/lib/Nav";
+import { DefaultButton } from "@fluentui/react/lib/Button";
 
 // Define the nav items
 const navLinkGroups: INavLinkGroup[] = [
   {
-    name: 'Home',
-    expandAriaLabel: 'Expand Home section',
-    collapseAriaLabel: 'Collapse Home section',
+    name: "Home",
+    expandAriaLabel: "Expand Home section",
+    collapseAriaLabel: "Collapse Home section",
     links: [
       {
-        name: 'Activity',
-        url: 'http://example.com',
-        key: 'key1',
-        target: '_blank',
+        name: "Activity",
+        url: "http://example.com",
+        key: "key1",
+        target: "_blank",
       },
       {
-        name: 'News',
-        url: 'http://msn.com',
-        key: 'key2',
-        target: '_blank',
+        name: "News",
+        url: "http://msn.com",
+        key: "key2",
+        target: "_blank",
       },
     ],
   },
   {
-    name: 'Documents',
-    expandAriaLabel: 'Expand Documents section',
-    collapseAriaLabel: 'Collapse Documents section',
+    name: "Documents",
+    expandAriaLabel: "Expand Documents section",
+    collapseAriaLabel: "Collapse Documents section",
     links: [
       {
-        name: 'Word',
-        url: 'http://example.com',
-        key: 'key3',
-        target: '_blank',
+        name: "Word",
+        url: "http://example.com",
+        key: "key3",
+        target: "_blank",
       },
       {
-        name: 'Excel',
-        url: 'http://example.com',
-        key: 'key4',
-        target: '_blank',
+        name: "Excel",
+        url: "http://example.com",
+        key: "key4",
+        target: "_blank",
       },
     ],
   },
@@ -46,34 +46,34 @@ const navLinkGroups: INavLinkGroup[] = [
 
 // Define a custom component to render the links as buttons
 const LinkAsButton = (props: INavLink) => {
-    return (
-      <DefaultButton
-        text={props.name}
-        href={props.url}
-        target={props.target}
-        onClick={props.onClick}
-        checked={props.isSelected}
-      />
-    );
-  };
+  return (
+    <DefaultButton
+      text={props.name}
+      href={props.url}
+      target={props.target}
+      onClick={props.onClick}
+      checked={props.isSelected}
+    />
+  );
+};
 
 // Define the nav props
 const navProps = {
-    // The nav items
-    groups: navLinkGroups,
-  
-    // The custom component to render the links
-    linkAs: LinkAsButton,
-  };
-  
+  // The nav items
+  groups: navLinkGroups,
+
+  // The custom component to render the links
+  linkAs: LinkAsButton,
+};
+
 // Define the nav styles
 const navStyles: Partial<INavStyles> = {
   root: {
     width: 208,
     height: 350,
-    boxSizing: 'border-box',
-    border: '1px solid #eee',
-    overflowY: 'auto',
+    boxSizing: "border-box",
+    border: "1px solid #eee",
+    overflowY: "auto",
   },
 };
 
@@ -103,3 +103,6 @@ const navStyles: Partial<INavStyles> = {
 export const NavCustomLinkExample = () => {
   return <Nav {...navProps} />;
 };
+export default function NavComponent() {
+  return <Nav {...navProps} />;
+}

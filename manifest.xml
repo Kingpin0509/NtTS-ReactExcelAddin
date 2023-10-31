@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>c81654cf-ff1e-46af-ae3c-f127f3feb90f</Id>
-  <Version>2.1.2.0</Version>
+  <Version>2.5.0.0</Version>
     <ProviderName>Michael Humann</ProviderName>
   <DefaultLocale>de-De</DefaultLocale>
   <DisplayName DefaultValue="Excelerweiterung - Nietiet GmbH"/>
@@ -30,9 +30,9 @@
           </GetStarted>
           <FunctionFile resid="Commands.Url"/>
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-              <CustomTab id="TabNietiet">
+            <CustomTab id="TabNietiet">
               <Group id="CommandsGroup">
-                <Label resid="CommandsGroup.Label"/>
+              <Label resid="CommandsGroup.Label"/>
                 <Icon>
                   <bt:Image size="16" resid="Icon.16x16"/>
                   <bt:Image size="32" resid="Icon.32x32"/>
@@ -56,22 +56,7 @@
                   </Action>
                 </Control>
 
-                <Control xsi:type="Button" id="TaskpaneButton1">
-                  <Label resid="TaskpaneButton1.Label" />
-                  <Supertip>
-                    <Title resid="TaskpaneButton1.Label"/>
-                    <Description resid="TaskpaneButton1.Tooltip"/>
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId2</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
-                  </Action>
-                </Control>
+
 
                 <Control xsi:type="Button" id="ToggleProtection">
                   <Label resid="ProtectionButtonLabel" />
@@ -88,10 +73,44 @@
                     <FunctionName>toggleProtection</FunctionName>
                   </Action>
                 </Control>
-
               </Group>
               <Label resid="TabNietiet.Label" />
             </CustomTab>
+          </ExtensionPoint>
+          <ExtensionPoint xsi:type="ContextMenu">
+            <OfficeMenu id="ContextMenuCell">
+              <Control xsi:type="Menu" id="ContextMenu2">
+                <Label resid="TaskpaneButton1.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton1.Label"/>
+                    <Description resid="TaskpaneButton1.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                <Items>
+                  <Item id="myMenuItemID">            
+                  <Label resid="TaskpaneButton1.Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton1.Label"/>
+                    <Description resid="TaskpaneButton1.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>highlightSelection</FunctionName>
+                  </Action>
+                </Item>
+              </Items> 
+                      <!-- information about the control -->
+              </Control>
+                      <!-- other controls, as needed -->
+            </OfficeMenu>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -116,14 +135,15 @@
         <bt:String id="TabNietiet.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="TaskpaneButton.Label" DefaultValue="Excelerweiterung"/>
-        <bt:String id="TaskpaneButton1.Label" DefaultValue="Excelerweiterung 1"/>
+        <bt:String id="TaskpaneButton1.Label" DefaultValue="Highlight"/>
         <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
       </bt:ShortStrings>
 
       <bt:LongStrings>
         <bt:String id="GetStarted.Description" DefaultValue="Excelerweiterung erfolgreich geladen. Öffne den 'Nietiet GmbH' Tab, klick auf 'Excelerweiterung' und leg los."/>
+        <bt:String id="residToolTip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
         <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
-        <bt:String id="TaskpaneButton1.Tooltip" DefaultValue="Klicken um Excelerweiterung 1 anzuzeigen"/>
+        <bt:String id="TaskpaneButton1.Tooltip" DefaultValue="Text Highlight"/>
         <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
       </bt:LongStrings>
     </Resources>

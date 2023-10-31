@@ -5,6 +5,9 @@ import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
 import { NavCustomLinkExample } from "./Navigation";
 import { Nav, INavStyles, INavLinkGroup, INavLink } from "@fluentui/react/lib/Nav";
+import NavComponent from "./Navigation"
+
+
 /* global console, Excel, require  */
 
 export interface AppProps {
@@ -100,7 +103,7 @@ export const NavBasicExample: React.FunctionComponent = () => {
   );
 };
 
-function _onLinkClick(ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
+function _onLinkClick(_ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
   if (item && item.name === "News") {
     alert("News link clicked");
   }
@@ -287,7 +290,9 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { title, isOfficeInitialized } = this.props;
-
+      <div>
+      <NavComponent /> // Use the function component with the nav props
+    </div>
     if (!isOfficeInitialized) {
       return (
         <Progress
@@ -299,7 +304,8 @@ export default class App extends React.Component<AppProps, AppState> {
     }
     <NavCustomLinkExample></NavCustomLinkExample>;
     return (
-      <div className="ms-welcome">
+
+    <div className="ms-welcome">
         <NavBasicExample></NavBasicExample>
         <Header
           logo={require("./../../../assets/logo-filled.png")}
