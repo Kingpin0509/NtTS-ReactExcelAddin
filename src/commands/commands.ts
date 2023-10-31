@@ -4,9 +4,10 @@
  */
 
 /* global global, Office, self, window */
-
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called
+Office.onReady(function (info) {
+  if (info.host === Office.HostType.Excel) {
+    // If needed, Office.js is ready to be called
+  }
 });
 
 /**
@@ -28,6 +29,24 @@ function action(event: Office.AddinCommands.Event) {
   event.completed();
 }
 
+async function highlightSelection(event) {
+  try {
+    await Excel.run(async (context) => {
+      const range = context.workbook.getSelectedRange();
+      range.format.fill.color = "yellow";
+      await context.sync();
+    });
+  } catch (error) {
+    console.error(error);
+  }
+
+  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
+  event.completed();
+}
+// You must register the function with the following line.
+Office.actions.associate("highlightSelection", highlightSelection);
+
+// The add-in command functions need to be available in global scope
 function getGlobal() {
   return typeof self !== "undefined"
     ? self
@@ -39,24 +58,4 @@ function getGlobal() {
 }
 
 const g = getGlobal() as any;
-
-// The add-in command functions need to be available in global scope
 g.action = action;
-
-async function highlightSelection(event) {
-  try {
-    await Excel.run(async (context) => {
-      const range = context.workbook.getSelectedRange();
-      range.format.fill.color = "yellow";
-      await context.sync();
-    });
-  } catch (error) {
-    // Note: In a production add-in, notify the user through your add-in's UI.
-    console.error(error);
-  }
-
-  // Calling event.completed is required. event.completed lets the platform know that processing has completed.
-  event.completed();
-}
-// You must register the function with the following line.
-Office.actions.associate("highlightSelection", highlightSelection);

@@ -3,9 +3,7 @@ import { DefaultButton } from "@fluentui/react";
 import Header from "./Header";
 import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
-import { NavCustomLinkExample } from "./Navigation";
 import { Nav, INavStyles, INavLinkGroup, INavLink } from "@fluentui/react/lib/Nav";
-import NavComponent from "./Navigation";
 
 /* global console, Excel, require  */
 
@@ -20,24 +18,6 @@ export interface AppState {
 
 /* nav   */
 
-export const NavBasicExample: React.FunctionComponent = () => {
-  return (
-    <Nav
-      onLinkClick={_onLinkClick}
-      selectedKey="key1"
-      ariaLabel="Nav basic example"
-      styles={navStyles}
-      groups={navLinkGroups}
-      isOnTop
-    />
-  );
-};
-
-function _onLinkClick(_ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
-  if (item && item.name === "News") {
-    alert("News link clicked");
-  }
-}
 const navStyles: Partial<INavStyles> = {
   root: {
     //  width: 208,
@@ -96,7 +76,23 @@ const navLinkGroups: INavLinkGroup[] = [
     ],
   },
 ];
-
+export const NavBasicExample: React.FunctionComponent = () => {
+  return (
+    <Nav
+      onLinkClick={_onLinkClick}
+      selectedKey="key1"
+      ariaLabel="Nav basic example"
+      styles={navStyles}
+      groups={navLinkGroups}
+      isOnTop
+    />
+  );
+};
+function _onLinkClick(_ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
+  if (item && item.name === "Start") {
+    ("Start link clicked");
+  }
+}
 /* nav   */
 
 export default class App extends React.Component<AppProps, AppState> {
@@ -304,12 +300,7 @@ export default class App extends React.Component<AppProps, AppState> {
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
           </p>
-
           <h3>Status</h3>
-          <div className="ms-Grid-row">
-            <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
-            <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
-          </div>
           <DefaultButton
             color="#66ff00"
             className="ms-welcome__action"
@@ -381,6 +372,10 @@ export default class App extends React.Component<AppProps, AppState> {
           <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
             Bulk- Doypackauftrag erfassen (AF-_-_)
           </DefaultButton> */}
+          <div className="ms-Grid-row">
+            <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
+            <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
+          </div>
         </HeroList>
       </div>
     );
