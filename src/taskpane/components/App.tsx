@@ -88,7 +88,6 @@ export const NavBasicExample: React.FunctionComponent = () => {
       styles={navStyles}
       groups={navLinkGroups}
       isOnTop
-
     />
   );
 };
@@ -279,6 +278,7 @@ export default class App extends React.Component<AppProps, AppState> {
   };
 
   render() {
+    <NavBasicExample></NavBasicExample>;
     const { title, isOfficeInitialized } = this.props;
 
     if (!isOfficeInitialized) {
@@ -290,20 +290,18 @@ export default class App extends React.Component<AppProps, AppState> {
         />
       );
     }
-        <NavBasicExample></NavBasicExample>
     return (
       <div className="ms-welcome">
+        <NavBasicExample></NavBasicExample>
         <Header
           logo={require("./../../../assets/logo-filled.png")}
           title={this.props.title}
           message="Herzlich Willkommen"
-        />        <NavBasicExample></NavBasicExample>
-
+        />
         <HeroList
           message="One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung zur vereinfachung und standardisierung der Arbeitplannung"
           items={this.state.listItems}
-        >        <NavBasicExample></NavBasicExample>
-
+        >
           <p className="ms-font-xs">
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
