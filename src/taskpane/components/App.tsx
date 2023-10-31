@@ -20,10 +20,28 @@ export interface AppState {
 
 /* nav   */
 
+export const NavBasicExample: React.FunctionComponent = () => {
+  return (
+    <Nav
+      onLinkClick={_onLinkClick}
+      selectedKey="key1"
+      ariaLabel="Nav basic example"
+      styles={navStyles}
+      groups={navLinkGroups}
+      isOnTop
+    />
+  );
+};
+
+function _onLinkClick(_ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
+  if (item && item.name === "News") {
+    alert("News link clicked");
+  }
+}
 const navStyles: Partial<INavStyles> = {
   root: {
-    width: 208,
-    height: 350,
+    //  width: 208,
+    //  height: 350,
     boxSizing: "border-box",
     border: "1px solid #eee",
     overflowY: "auto",
@@ -78,25 +96,6 @@ const navLinkGroups: INavLinkGroup[] = [
     ],
   },
 ];
-
-export const NavBasicExample: React.FunctionComponent = () => {
-  return (
-    <Nav
-      onLinkClick={_onLinkClick}
-      selectedKey="key1"
-      ariaLabel="Nav basic example"
-      styles={navStyles}
-      groups={navLinkGroups}
-      isOnTop
-    />
-  );
-};
-
-function _onLinkClick(_ev?: React.MouseEvent<HTMLElement>, item?: INavLink) {
-  if (item && item.name === "News") {
-    alert("News link clicked");
-  }
-}
 
 /* nav   */
 
@@ -278,7 +277,6 @@ export default class App extends React.Component<AppProps, AppState> {
   };
 
   render() {
-    <NavBasicExample></NavBasicExample>;
     const { title, isOfficeInitialized } = this.props;
 
     if (!isOfficeInitialized) {
