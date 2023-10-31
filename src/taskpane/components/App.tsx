@@ -5,8 +5,7 @@ import HeroList, { HeroListItem } from "./HeroList";
 import Progress from "./Progress";
 import { NavCustomLinkExample } from "./Navigation";
 import { Nav, INavStyles, INavLinkGroup, INavLink } from "@fluentui/react/lib/Nav";
-import NavComponent from "./Navigation"
-
+import NavComponent from "./Navigation";
 
 /* global console, Excel, require  */
 
@@ -35,56 +34,45 @@ const navLinkGroups: INavLinkGroup[] = [
   {
     links: [
       {
-        name: "Home",
+        name: "Start",
+        url: "taskpane.html",
+        icon: "News",
+        key: "key1",
+        target: "_blank",
+      },
+      {
+        name: "Aufträge",
         url: "http://example.com",
-        expandAriaLabel: "Expand Home section",
+        expandAriaLabel: "Expand Auftrag section",
         links: [
           {
-            name: "Activity",
-            url: "http://msn.com",
-            key: "key1",
-            target: "_blank",
-          },
-          {
-            name: "MSN",
+            name: "Erstellen",
             url: "http://msn.com",
             disabled: true,
             key: "key2",
             target: "_blank",
           },
+          {
+            name: "Verwalten",
+            url: "http://msn.com",
+            disabled: true,
+            key: "key3",
+            target: "_blank",
+          },
         ],
-        isExpanded: true,
+        isExpanded: false,
       },
       {
-        name: "Documents",
+        name: "Mitarbeiter",
         url: "http://example.com",
-        key: "key3",
+        key: "key4",
         isExpanded: true,
         target: "_blank",
       },
       {
-        name: "Pages",
-        url: "http://msn.com",
-        key: "key4",
-        target: "_blank",
-      },
-      {
-        name: "Notebook",
-        url: "http://msn.com",
+        name: "Arbeitsplanung",
+        url: "http://example.com",
         key: "key5",
-        disabled: true,
-      },
-      {
-        name: "Communication and Media",
-        url: "http://msn.com",
-        key: "key6",
-        target: "_blank",
-      },
-      {
-        name: "News",
-        url: "http://cnn.com",
-        icon: "News",
-        key: "key7",
         target: "_blank",
       },
     ],
@@ -95,10 +83,12 @@ export const NavBasicExample: React.FunctionComponent = () => {
   return (
     <Nav
       onLinkClick={_onLinkClick}
-      selectedKey="key3"
+      selectedKey="key1"
       ariaLabel="Nav basic example"
       styles={navStyles}
       groups={navLinkGroups}
+      isOnTop
+
     />
   );
 };
@@ -290,9 +280,7 @@ export default class App extends React.Component<AppProps, AppState> {
 
   render() {
     const { title, isOfficeInitialized } = this.props;
-      <div>
-      <NavComponent /> // Use the function component with the nav props
-    </div>
+
     if (!isOfficeInitialized) {
       return (
         <Progress
@@ -302,20 +290,20 @@ export default class App extends React.Component<AppProps, AppState> {
         />
       );
     }
-    <NavCustomLinkExample></NavCustomLinkExample>;
-    return (
-
-    <div className="ms-welcome">
         <NavBasicExample></NavBasicExample>
+    return (
+      <div className="ms-welcome">
         <Header
           logo={require("./../../../assets/logo-filled.png")}
           title={this.props.title}
           message="Herzlich Willkommen"
-        />
+        />        <NavBasicExample></NavBasicExample>
+
         <HeroList
           message="One-Klick Tabellen-, Spalten-, Zeilen- und Zellenformatierung zur vereinfachung und standardisierung der Arbeitplannung"
           items={this.state.listItems}
-        >
+        >        <NavBasicExample></NavBasicExample>
+
           <p className="ms-font-xs">
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
