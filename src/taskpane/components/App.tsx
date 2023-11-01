@@ -26,6 +26,9 @@ const navStyles: Partial<INavStyles> = {
     border: "1px solid #eee",
     overflowY: "auto",
   },
+  navItems: {
+    display: "flex",
+  },
 };
 
 const navLinkGroups: INavLinkGroup[] = [
@@ -38,32 +41,32 @@ const navLinkGroups: INavLinkGroup[] = [
         key: "key1",
         isLink: "true",
       },
-      {
-        name: "Aufträge",
-        url: "http://example.com",
-        expandAriaLabel: "Expand Auftrag section",
-        links: [
-          {
-            name: "Erstellen",
-            url: "http://msn.com",
-            disabled: true,
-            key: "key2",
-            isLink: "true",
-          },
-          {
-            name: "Verwalten",
-            url: "http://msn.com",
-            disabled: true,
-            key: "key3",
-          },
-        ],
-        isExpanded: false,
-      },
-      {
-        name: "Mitarbeiterplanung",
-        url: "http://example.com",
-        key: "key4",
-      },
+      // {
+      //   name: "Aufträge",
+      //   url: "http://example.com",
+      //   expandAriaLabel: "Expand Auftrag section",
+      //   links: [
+      //     {
+      //       name: "Erstellen",
+      //       url: "http://msn.com",
+      //       disabled: true,
+      //       key: "key2",
+      //       isLink: "true",
+      //     },
+      //     {
+      //       name: "Verwalten",
+      //       url: "http://msn.com",
+      //       disabled: true,
+      //       key: "key3",
+      //     },
+      //   ],
+      //   isExpanded: false,
+      // },
+      // {
+      //   name: "Mitarbeiterplanung",
+      //   url: "http://example.com",
+      //   key: "key4",
+      // },
       {
         name: "Arbeitsplanung",
         url: "http://example.com",
@@ -295,7 +298,7 @@ export default class App extends React.Component<AppProps, AppState> {
           <p className="ms-font-xs">
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
-          </p>{" "}
+          </p>
         </HeroList>
 
         <h3>Status</h3>
@@ -370,10 +373,11 @@ export default class App extends React.Component<AppProps, AppState> {
           <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
             Bulk- Doypackauftrag erfassen (AF-_-_)
           </DefaultButton> */}
-        <div className="ms-Grid-row">
-          <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
-          <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
-        </div>
+        <footer className="footer">
+          <div className="container">
+            <div className="brand-text ms-fontColor-white ms-font-m ms-fontWeight-semibold">Nietiet GmbH</div>
+          </div>
+        </footer>
       </div>
     );
   }
