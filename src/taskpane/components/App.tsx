@@ -26,8 +26,10 @@ const navStyles: Partial<INavStyles> = {
     border: "1px solid #eee",
     overflowY: "auto",
   },
+
   navItems: {
     display: "flex",
+    background: "237, 235, 233",
   },
 };
 
