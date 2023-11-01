@@ -36,7 +36,7 @@ const navLinkGroups: INavLinkGroup[] = [
         url: "taskpane.html",
         icon: "News",
         key: "key1",
-        target: "_blank",
+        isLink: "true",
       },
       {
         name: "Aufträge",
@@ -48,30 +48,26 @@ const navLinkGroups: INavLinkGroup[] = [
             url: "http://msn.com",
             disabled: true,
             key: "key2",
-            target: "_blank",
+            isLink: "true",
           },
           {
             name: "Verwalten",
             url: "http://msn.com",
             disabled: true,
             key: "key3",
-            target: "_blank",
           },
         ],
         isExpanded: false,
       },
       {
-        name: "Mitarbeiter",
+        name: "Mitarbeiterplanung",
         url: "http://example.com",
         key: "key4",
-        isExpanded: true,
-        target: "_blank",
       },
       {
         name: "Arbeitsplanung",
         url: "http://example.com",
         key: "key5",
-        target: "_blank",
       },
     ],
   },
@@ -299,49 +295,51 @@ export default class App extends React.Component<AppProps, AppState> {
           <p className="ms-font-xs">
             Markiere den gewünschten <b>Bereich</b> oder eine einzelne Zelle und klicke auf die gewünschte
             <b>Formatierungsvorlage</b>.
-          </p>
-          <h3>Status</h3>
-          <DefaultButton
-            color="#66ff00"
-            className="ms-welcome__action"
-            iconProps={{ iconName: "ChevronRight" }}
-            onClick={this.clickfertig}
-          >
-            Fertig
-          </DefaultButton>
-          <DefaultButton
-            color="#66ff00"
-            className="ms-welcome__action"
-            iconProps={{ iconName: "ChevronRight" }}
-            onClick={this.clickläuft}
-          >
-            Läuft
-          </DefaultButton>
-          <DefaultButton
-            color="#66ff00"
-            className="ms-welcome__action"
-            iconProps={{ iconName: "ChevronRight" }}
-            onClick={this.clickläuftbald}
-          >
-            Läuft bald
-          </DefaultButton>
-          <DefaultButton
-            color="yellow"
-            className="ms-welcome__action"
-            iconProps={{ iconName: "ChevronRight" }}
-            onClick={this.clickpausiert}
-          >
-            Pausiert
-          </DefaultButton>
-          <DefaultButton
-            color="yellow"
-            className="ms-welcome__action"
-            iconProps={{ iconName: "ChevronRight" }}
-            onClick={this.clickfreigabewartend}
-          >
-            warten auf Freigabe
-          </DefaultButton>
-          {/* 
+          </p>{" "}
+        </HeroList>
+
+        <h3>Status</h3>
+        <DefaultButton
+          color="#66ff00"
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={this.clickfertig}
+        >
+          Fertig
+        </DefaultButton>
+        <DefaultButton
+          color="#66ff00"
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={this.clickläuft}
+        >
+          Läuft
+        </DefaultButton>
+        <DefaultButton
+          color="#66ff00"
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={this.clickläuftbald}
+        >
+          Läuft bald
+        </DefaultButton>
+        <DefaultButton
+          color="yellow"
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={this.clickpausiert}
+        >
+          Pausiert
+        </DefaultButton>
+        <DefaultButton
+          color="yellow"
+          className="ms-welcome__action"
+          iconProps={{ iconName: "ChevronRight" }}
+          onClick={this.clickfreigabewartend}
+        >
+          warten auf Freigabe
+        </DefaultButton>
+        {/* 
           <div className="ms-Grid">
             <div className="ms-Grid-row">
               <div className="ms-Grid-col ms-sm4 ms-smPush8">
@@ -372,11 +370,10 @@ export default class App extends React.Component<AppProps, AppState> {
           <DefaultButton className="ms-welcome__action" iconProps={{ iconName: "ChevronRight" }} onClick={this.click}>
             Bulk- Doypackauftrag erfassen (AF-_-_)
           </DefaultButton> */}
-          <div className="ms-Grid-row">
-            <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
-            <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
-          </div>
-        </HeroList>
+        <div className="ms-Grid-row">
+          <div className="ms-Grid-col ms-sm4 ms-smPush8">First in code</div>
+          <div className="ms-Grid-col ms-sm8 ms-smPull4">Second in code</div>
+        </div>
       </div>
     );
   }

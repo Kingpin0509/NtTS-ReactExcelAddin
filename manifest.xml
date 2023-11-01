@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>c81654cf-ff1e-46af-ae3c-f127f3feb90f</Id>
-  <Version>2.5.0.0</Version>
+  <Version>3.0.0.0</Version>
     <ProviderName>Michael Humann</ProviderName>
   <DefaultLocale>de-De</DefaultLocale>
   <DisplayName DefaultValue="Excelerweiterung - Nietiet GmbH"/>
@@ -56,13 +56,11 @@
                   </Action>
                 </Control>
 
-
-
-                <Control xsi:type="Button" id="ToggleProtection">
-                  <Label resid="ProtectionButtonLabel" />
+                <Control xsi:type="Button" id="fertig">
+                  <Label resid="CGFertigButton.Label" />
                   <Supertip>
-                    <Title resid="ProtectionButtonLabel" />
-                    <Description resid="ProtectionButtonToolTip" />
+                    <Title resid="CGFertigButton.Label" />
+                    <Description resid="CGFertigButton.Tooltip" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
@@ -70,20 +68,40 @@
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>toggleProtection</FunctionName>
+                    <FunctionName>fertig</FunctionName>
                   </Action>
                 </Control>
+
+
+                <Control xsi:type="Button" id="addRow">
+                  <Label resid="CGaddRow.Label" />
+                  <Supertip>
+                    <Title resid="CGaddRow.Label" />
+                    <Description resid="CGaddRow.Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>addRow</FunctionName>
+                  </Action>
+                </Control>
+
               </Group>
               <Label resid="TabNietiet.Label" />
             </CustomTab>
           </ExtensionPoint>
+
+
           <ExtensionPoint xsi:type="ContextMenu">
             <OfficeMenu id="ContextMenuCell">
               <Control xsi:type="Menu" id="ContextMenu2">
-                <Label resid="TaskpaneButton1.Label" />
+                <Label resid="RightClickMenu.Label" />
                   <Supertip>
-                    <Title resid="TaskpaneButton1.Label"/>
-                    <Description resid="TaskpaneButton1.Tooltip"/>
+                    <Title resid="RightClickMenu.Label"/>
+                    <Description resid="RightClickMenu.Tooltip"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
@@ -91,11 +109,11 @@
                     <bt:Image size="80" resid="Icon.80x80"/>
                   </Icon>
                 <Items>
-                  <Item id="myMenuItemID">            
-                  <Label resid="TaskpaneButton1.Label" />
+                  <Item id="myMenuItemID">
+                  <Label resid="HighlightButton.Label" />
                   <Supertip>
-                    <Title resid="TaskpaneButton1.Label"/>
-                    <Description resid="TaskpaneButton1.Tooltip"/>
+                    <Title resid="HighlightButton.Label"/>
+                    <Description resid="HighlightButton.Tooltip"/>
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Icon.16x16"/>
@@ -104,6 +122,21 @@
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>highlightSelection</FunctionName>
+                  </Action>
+                </Item>
+                <Item id="myMenuItemID1">
+                  <Label resid="FertigButton.Label" />
+                  <Supertip>
+                    <Title resid="FertigButton.Label"/>
+                    <Description resid="FertigButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>fertig</FunctionName>
                   </Action>
                 </Item>
               </Items> 
@@ -127,24 +160,28 @@
         <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
         <bt:Url id="Commands.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/commands.html"/>
         <bt:Url id="Taskpane.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/taskpane.html"/>
-        <bt:Url id="Taskpane1.Url" DefaultValue="https://storagenietietoffice.z13.web.core.windows.net/taskpane.html"/>
       </bt:Urls>
 
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Nietiet GmbH - Excelerweiterung!"/>
+        <bt:String id="GetStarted.Title" DefaultValue="Nietiet GmbH - Herzlich Willkommen"/>
         <bt:String id="TabNietiet.Label" DefaultValue="Nietiet GmbH"/>
         <bt:String id="CommandsGroup.Label" DefaultValue="Nietiet GmbH"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Excelerweiterung"/>
-        <bt:String id="TaskpaneButton1.Label" DefaultValue="Highlight"/>
-        <bt:String id="ProtectionButtonLabel" DefaultValue="Toggle Worksheet Protection" />
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Zeige Aufgabenbereich"/>
+        <bt:String id="CGFertigButton.Label" DefaultValue="Fertig" />
+        <bt:String id="CGaddRow.Label" DefaultValue="Zeile Hinzufügen" />
+        <bt:String id="RightClickMenu.Label" DefaultValue="Nietiet GmbH"/>
+        <bt:String id="HighlightButton.Label" DefaultValue="Highlight"/>
+        <bt:String id="FertigButton.Label" DefaultValue="Fertig"/>
       </bt:ShortStrings>
 
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Excelerweiterung erfolgreich geladen. Öffne den 'Nietiet GmbH' Tab, klick auf 'Excelerweiterung' und leg los."/>
-        <bt:String id="residToolTip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken um Excelerweiterung anzuzeigen"/>
-        <bt:String id="TaskpaneButton1.Tooltip" DefaultValue="Text Highlight"/>
-        <bt:String id="ProtectionButtonToolTip" DefaultValue="Click to protect or unprotect the current worksheet." />
+        <bt:String id="GetStarted.Description" DefaultValue="Öffne den 'Nietiet GmbH' Tab, "/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Klicken um das seitliche Aufgabenbereichsfenster einzublenden"/>
+        <bt:String id="CGFertigButton.Tooltip" DefaultValue="Ausgewählte Zelle mit dem Status FERTIG markieren" />
+        <bt:String id="CGaddRow.Tooltip" DefaultValue="Zeile Hinzufügen" />
+        <bt:String id="RightClickMenu.Tooltip" DefaultValue="Nietiet GmbH"/>
+        <bt:String id="HighlightButton.Tooltip" DefaultValue="Text Highlight"/>
+        <bt:String id="FertigButton.Tooltip" DefaultValue="Ausgewählte Zelle mit dem Status FERTIG markieren"/>
       </bt:LongStrings>
     </Resources>
     
