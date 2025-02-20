@@ -1,0 +1,9 @@
+{
+  "ignore": {
+    "files": [
+      "u:/1.A. Microsoft/YoGenerator/NtTS ReactOfficeExcelAddin/src/taskpane/components/Header.tsx",
+      "u:/1.A. Microsoft/YoGenerator/NtTS ReactOfficeExcelAddin/src/taskpane/components/HeroList.tsx",
+      "u:/1.A. Microsoft/YoGenerator/NtTS ReactOfficeExcelAddin/src/taskpane/components/Progress.tsx"
+    ]
+  }
+}

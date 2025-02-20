@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*
  * Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT license.
  * See LICENSE in the project root for license information.
@@ -79,9 +80,7 @@ async function addRow() {
     const sheet = context.workbook.worksheets.getItem("Täglicher Arbeitsplan");
     const expensesTable = sheet.tables.getItem("Arbeitsplan_Tabelle_Industriestr");
 
-    expensesTable.rows.add(null, [
-      ["Linie", "Mitarbeiter", "Kunde", "Produkt"]
-    ]);
+    expensesTable.rows.add(null, [["Linie", "Mitarbeiter", "Kunde", "Produkt"]]);
 
     sheet.getUsedRange().format.autofitColumns();
     sheet.getUsedRange().format.autofitRows();
@@ -90,7 +89,6 @@ async function addRow() {
   });
 }
 Office.actions.associate("addRow", addRow);
-
 
 // The add-in command functions need to be available in global scope
 function getGlobal() {
